@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <h2>Portfolio</h2>
+    <ul>
+      <li><a href="{{ url_for('home') }}">Home</a></li>
+      <li><a href="{{ url_for('data_science') }}">Data Science</a></li>
+      <ul>
+        <li><a href="{{ url_for('churn') }}">Churn Rate</a></li>
+        <li><a href="{{ url_for('anomalies') }}">Anomalies</a></li>
+        <li><a href="{{ url_for('nlp') }}">NLP</a></li>
+      </ul>
+      <li><a href="{{ url_for('data_engineering') }}">Data Engineering</a></li>
+      <ul>
+        <li><a href="{{ url_for('pipelines') }}">Pipelines</a></li>
+        <li><a href="{{ url_for('streaming') }}">Streaming</a></li>
+        <li><a href="{{ url_for('automation') }}">Automation</a></li>
+      </ul>
+    </ul>
+  </div>
+
+  <!-- Botón menú -->
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+  <!-- Contenido -->
+  <div class="content">
+    {% block content %}{% endblock %}
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
