@@ -3,38 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title }}</title>
+  <title>Santiago Diaz | Portfolio</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-  <!-- Sidebar -->
+  <!-- SIDEBAR -->
   <div class="sidebar" id="sidebar">
     <h2>Portfolio</h2>
     <ul>
-      <li><a href="{{ url_for('home') }}">Home</a></li>
-      <li><a href="{{ url_for('data_science') }}">Data Science</a></li>
-      <ul>
-        <li><a href="{{ url_for('churn') }}">Churn Rate</a></li>
-        <li><a href="{{ url_for('anomalies') }}">Anomalies</a></li>
-        <li><a href="{{ url_for('nlp') }}">NLP</a></li>
-      </ul>
-      <li><a href="{{ url_for('data_engineering') }}">Data Engineering</a></li>
-      <ul>
-        <li><a href="{{ url_for('pipelines') }}">Pipelines</a></li>
-        <li><a href="{{ url_for('streaming') }}">Streaming</a></li>
-        <li><a href="{{ url_for('automation') }}">Automation</a></li>
-      </ul>
+      <li><a href="{{ url_for('index') }}">Home</a></li>
+      <li><a href="{{ url_for('data_science') }}">Data Science</a>
+        <ul>
+          <li><a href="{{ url_for('churn') }}">Churn Rate</a></li>
+          <li><a href="{{ url_for('anomalies') }}">Anomalies</a></li>
+          <li><a href="{{ url_for('nlp') }}">NLP</a></li>
+        </ul>
+      </li>
+      <li><a href="{{ url_for('data_engineering') }}">Data Engineering</a>
+        <ul>
+          <li><a href="{{ url_for('pipelines') }}">Pipelines</a></li>
+          <li><a href="{{ url_for('streaming') }}">Streaming</a></li>
+          <li><a href="{{ url_for('automation') }}">Automation</a></li>
+        </ul>
+      </li>
     </ul>
   </div>
 
-  <!-- Botón menú -->
+  <!-- BOTÓN MENÚ -->
   <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
-  <!-- Contenido -->
+  <!-- CONTENIDO -->
   <div class="content">
     {% block content %}{% endblock %}
   </div>
 
+  <!-- JS -->
   <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
